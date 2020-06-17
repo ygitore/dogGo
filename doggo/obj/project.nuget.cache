@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "neQauCyTJ/Szgxyl+SG5rSovpFFFWeqbFw8LWmsGxF4ArBFXWu7+kzQmsVCj8hpA3loNY+bT20GlRr8wq8dupA==",
+  "dgSpecHash": "0MwonRgfm+rvn9PC7LOc6VwOvbnsITmtljGvWLF3QVsm/FJEblFOAU3gKD7LBfmM6EAQNganbtrrMap5Qyk4RQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Owner\\workspace\\doggo\\doggo\\doggo.csproj",
   "expectedPackageFiles": [
@@ -36,6 +36,7 @@
     "C:\\Users\\Owner\\.nuget\\packages\\microsoft.visualstudio.web.codegenerators.mvc\\3.1.3\\microsoft.visualstudio.web.codegenerators.mvc.3.1.3.nupkg.sha512",
     "C:\\Users\\Owner\\.nuget\\packages\\microsoft.win32.primitives\\4.3.0\\microsoft.win32.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\Owner\\.nuget\\packages\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
+    "C:\\Users\\Owner\\.nuget\\packages\\mvcdiagnostics\\5.2.7\\mvcdiagnostics.5.2.7.nupkg.sha512",
     "C:\\Users\\Owner\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
     "C:\\Users\\Owner\\.nuget\\packages\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",
     "C:\\Users\\Owner\\.nuget\\packages\\nuget.frameworks\\4.7.0\\nuget.frameworks.4.7.0.nupkg.sha512",

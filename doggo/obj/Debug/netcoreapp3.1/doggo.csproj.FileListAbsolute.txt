@@ -125,8 +125,10 @@ C:\Users\Owner\workspace\doggo\doggo\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAn
 C:\Users\Owner\workspace\doggo\doggo\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\Owner\workspace\doggo\doggo\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\Owner\workspace\doggo\doggo\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\Owner\workspace\doggo\doggo\obj\Debug\netcoreapp3.1\doggo.csproj.CoreCompileInputs.cache
-C:\Users\Owner\workspace\doggo\doggo\obj\Debug\netcoreapp3.1\doggo.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Owner\workspace\doggo\doggo\obj\Debug\netcoreapp3.1\Razor\Views\Walkers\Index.cshtml.g.cs
 C:\Users\Owner\workspace\doggo\doggo\obj\Debug\netcoreapp3.1\Razor\Views\Walkers\Details.cshtml.g.cs
 C:\Users\Owner\workspace\doggo\doggo\obj\Debug\netcoreapp3.1\Razor\Views\Walkers\Edit.cshtml.g.cs
+C:\Users\Owner\workspace\doggo\doggo\obj\Debug\netcoreapp3.1\doggo.csproj.CoreCompileInputs.cache
+C:\Users\Owner\workspace\doggo\doggo\obj\Debug\netcoreapp3.1\doggo.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Owner\workspace\doggo\doggo\obj\Debug\netcoreapp3.1\Razor\Views\Owners\Index.cshtml.g.cs
+C:\Users\Owner\workspace\doggo\doggo\obj\Debug\netcoreapp3.1\Razor\Views\Owners\Details.cshtml.g.cs
