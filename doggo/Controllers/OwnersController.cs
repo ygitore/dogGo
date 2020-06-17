@@ -2,52 +2,46 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using DogGo.Models;
-using DogGo.Repositories;
+using doggo.Models;
+using doggo.Repositories;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 
 namespace doggo.Controllers
 {
-   
-    public class WalkersController : Controller
+    public class OwnersController : Controller
     {
-        // GET: WalkersController
-        private readonly WalkerRepository _walkerRepo;
-
-        // The constructor accepts an IConfiguration object as a parameter. This class comes from the ASP.NET framework and is useful for retrieving things out of the appsettings.json file like connection strings.
-        public WalkersController(IConfiguration config)
+        // GET: OwnersController
+        private OwnerRepository _ownerRepository;
+        public OwnersController(IConfiguration conifg)
         {
-            _walkerRepo = new WalkerRepository(config);
+            _ownerRepository = new OwnerRepository(conifg);
         }
         public ActionResult Index()
         {
-            List<Walker> walkers = _walkerRepo.GetAllWalkers();
-
-            return View(walkers);
+            List<Owner> owners = _ownerRepository.GetAllWalkers();
+            return View(owners);
         }
 
-        // GET: WalkersController/Details/5
+        // GET: OwnersController/Details/5
         public ActionResult Details(int id)
         {
-            Walker walker = _walkerRepo.GetWalkerById(id);
-
-            if (walker == null)
+            Owner owner = _ownerRepository.GetOwnerById(id);
+            if(owner == null)
             {
                 return NotFound();
             }
-
-            return View(walker);
+            return View(owner);
         }
 
-        // GET: WalkersController/Create
+        // GET: OwnersController/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: WalkersController/Create
+        // POST: OwnersController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(IFormCollection collection)
@@ -62,13 +56,13 @@ namespace doggo.Controllers
             }
         }
 
-        // GET: WalkersController/Edit/5
+        // GET: OwnersController/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: WalkersController/Edit/5
+        // POST: OwnersController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, IFormCollection collection)
@@ -83,13 +77,13 @@ namespace doggo.Controllers
             }
         }
 
-        // GET: WalkersController/Delete/5
+        // GET: OwnersController/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: WalkersController/Delete/5
+        // POST: OwnersController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id, IFormCollection collection)
