@@ -132,3 +132,4 @@ C:\Users\Owner\workspace\doggo\doggo\obj\Debug\netcoreapp3.1\doggo.csproj.CoreCo
 C:\Users\Owner\workspace\doggo\doggo\obj\Debug\netcoreapp3.1\doggo.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Owner\workspace\doggo\doggo\obj\Debug\netcoreapp3.1\Razor\Views\Owners\Index.cshtml.g.cs
 C:\Users\Owner\workspace\doggo\doggo\obj\Debug\netcoreapp3.1\Razor\Views\Owners\Details.cshtml.g.cs
+C:\Users\Owner\workspace\doggo\doggo\obj\Debug\netcoreapp3.1\Razor\Views\Dog\Index.cshtml.g.cs
