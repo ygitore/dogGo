@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using doggo.Models;
 using doggo.Models.ViewModels;
 using doggo.Repositories;
-using DogGo.Models;
 using DogGo.Repositories;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -29,7 +28,7 @@ namespace doggo.Controllers
         }
         public ActionResult Index()
         {
-            List<Owner> owners = _ownerRepo.GetAllWalkers();
+            List<Owner> owners = _ownerRepo.getAllOwners();
             return View(owners);
         }
 
@@ -85,7 +84,7 @@ namespace doggo.Controllers
 
             OwnerFormViewModel vm = new OwnerFormViewModel()
             {
-                Owner = new Owner(),
+                Owner = _ownerRepo.GetOwnerById(id),
                 Neighborhoods = neighborhoods
             };
 
@@ -95,36 +94,39 @@ namespace doggo.Controllers
         // POST: OwnersController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(int id, OwnerFormViewModel vm)
         {
             try
             {
-                return RedirectToAction("Index");
+                _ownerRepo.UpdateOwner(vm.Owner);
+                return RedirectToAction("Index");                
             }
             catch
             {
-                return View();
+                return View(vm);
             }
         }
 
         // GET: OwnersController/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            Owner owner = _ownerRepo.GetOwnerById(id);
+            return View(owner);
         }
 
         // POST: OwnersController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult Delete(int id, Owner owner)
         {
             try
             {
+                _ownerRepo.DeleteOwner(id);
                 return RedirectToAction(nameof(Index));
             }
             catch
             {
-                return View();
+                return View(owner);
             }
         }
     }

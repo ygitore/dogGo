@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using DogGo.Models;
+using doggo.Models;
 using DogGo.Repositories;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -75,7 +75,7 @@ namespace doggo.Controllers
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Index");
             }
             catch
             {
