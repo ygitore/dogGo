@@ -1,4 +1,5 @@
 ﻿using doggo.Models;
+using doggo.Models.ViewModels;
 using DogGo.Repositories;
 using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
@@ -11,18 +12,12 @@ namespace doggo.Repositories
 {
     public class OwnerRepository
     {
-        private readonly OwnerRepository _ownerRepo;
-        private readonly DogRepository _dogRepo;
-        private readonly WalkerRepository _walkerRepo;
         private readonly IConfiguration _config;
 
         // The constructor accepts an IConfiguration object as a parameter. This class comes from the ASP.NET framework and is useful for retrieving things out of the appsettings.json file like connection strings.
         public OwnerRepository(IConfiguration config)
         {
             _config = config;
-            _ownerRepo = new OwnerRepository(config);
-            _dogRepo = new DogRepository(config);
-            _walkerRepo = new WalkerRepository(config);
         }
 
         public SqlConnection Connection
@@ -32,7 +27,7 @@ namespace doggo.Repositories
                 return new SqlConnection(_config.GetConnectionString("DefaultConnection"));
             }
         }
-        public List<Owner> GetAllWalkers()
+        public List<Owner> getAllOwners()
         {
             using (SqlConnection conn = Connection)
             {
@@ -40,7 +35,13 @@ namespace doggo.Repositories
                 using (SqlCommand cmd = conn.CreateCommand())
                 {
                     cmd.CommandText = @"
-                        SELECT Id, [Email], [Name],Address, [Phone], NeighborhoodId
+                        SELECT 
+                            Id,
+                            Email, 
+                            Name,
+                            Address, 
+                            Phone, 
+                            NeighborhoodId
                         FROM Owner";
 
                     SqlDataReader reader = cmd.ExecuteReader();
@@ -48,7 +49,7 @@ namespace doggo.Repositories
                     List<Owner> owners = new List<Owner>();
                     while (reader.Read())
                     {
-                        Owner owner = new Owner
+                        Owner owner = new Owner()
                         {
                             Id = reader.GetInt32(reader.GetOrdinal("Id")),
                             Email = reader.GetString(reader.GetOrdinal("Email")),
