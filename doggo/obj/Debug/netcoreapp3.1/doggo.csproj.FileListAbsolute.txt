@@ -11,7 +11,6 @@ C:\Users\Owner\workspace\doggo\doggo\obj\Debug\netcoreapp3.1\doggo.RazorCoreGene
 C:\Users\Owner\workspace\doggo\doggo\obj\Debug\netcoreapp3.1\Razor\Views\Dog\Create.cshtml.g.cs
 C:\Users\Owner\workspace\doggo\doggo\obj\Debug\netcoreapp3.1\Razor\Views\Dog\Delete.cshtml.g.cs
 C:\Users\Owner\workspace\doggo\doggo\obj\Debug\netcoreapp3.1\Razor\Views\Dog\Details.cshtml.g.cs
-C:\Users\Owner\workspace\doggo\doggo\obj\Debug\netcoreapp3.1\Razor\Views\Dog\Edit.cshtml.g.cs
 C:\Users\Owner\workspace\doggo\doggo\obj\Debug\netcoreapp3.1\Razor\Views\Dog\Index.cshtml.g.cs
 C:\Users\Owner\workspace\doggo\doggo\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\Owner\workspace\doggo\doggo\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
@@ -140,3 +139,5 @@ C:\Users\Owner\workspace\doggo\doggo\obj\Debug\netcoreapp3.1\Razor\Views\Owners\
 C:\Users\Owner\workspace\doggo\doggo\obj\Debug\netcoreapp3.1\Razor\Views\Owners\Details.cshtml.g.cs
 C:\Users\Owner\workspace\doggo\doggo\obj\Debug\netcoreapp3.1\Razor\Views\Owners\Edit.cshtml.g.cs
 C:\Users\Owner\workspace\doggo\doggo\obj\Debug\netcoreapp3.1\Razor\Views\Owners\Delete.cshtml.g.cs
+C:\Users\Owner\workspace\doggo\doggo\obj\Debug\netcoreapp3.1\Razor\Views\Dog\Edit.cshtml.g.cs
+C:\Users\Owner\workspace\doggo\doggo\obj\Debug\netcoreapp3.1\Razor\Views\Owners\Login.cshtml.g.cs

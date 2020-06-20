@@ -73,15 +73,14 @@ namespace doggo.Repositories
                 {
                     cmd.CommandText = @"
                         SELECT 
-                            d.Id, 
-                            d.Name, 
-                            d.OwnerId,
-                            d.Breed, 
-                            d.Notes, 
-                            d.ImageUrl                            
-                        FROM Dog d
-                        JOIN Owner o ON o.Id = d.OwnerId
-                        WHERE d.Id = @id";
+                            Id, 
+                            Name, 
+                            OwnerId,
+                            Breed, 
+                            Notes, 
+                            ImageUrl                            
+                        FROM Dog
+                        WHERE Id = @id";
                     cmd.Parameters.AddWithValue("@id", id);
                     SqlDataReader reader = cmd.ExecuteReader();
 
@@ -121,26 +120,27 @@ namespace doggo.Repositories
                     cmd.Parameters.AddWithValue("@name", dog.Name);
                     cmd.Parameters.AddWithValue("@ownerId", dog.OwnerId);
                     cmd.Parameters.AddWithValue("@breed", dog.Breed);
-                    cmd.Parameters.AddWithValue("@imageUrl", dog.ImageUrl);
-                    SqlDataReader reader = cmd.ExecuteReader();
 
-                    List<Dog> dogs = new List<Dog>();
-                    while (reader.Read())
+                    if (dog.Notes == null)
                     {
-                        dog = new Dog()
-                        {
-                            Id = reader.GetInt32(reader.GetOrdinal("Id")),
-                            Name = reader.GetString(reader.GetOrdinal("Name")),
-                            OwnerId = reader.GetInt32(reader.GetOrdinal("OwnerId")),
-                            Breed = reader.GetString(reader.GetOrdinal("Breed")),
-                            Notes = ReaderHelpers.GetNullableString(reader, "Notes"),
-                            ImageUrl = ReaderHelpers.GetNullableString(reader, "ImageUrl")
-                        };
-
-                        dogs.Add(dog);
+                        cmd.Parameters.AddWithValue("@notes", DBNull.Value);
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@notes", dog.Notes);
+                    }
+                    if (dog.ImageUrl == null)
+                    {
+                        cmd.Parameters.AddWithValue("@imageUrl", DBNull.Value);
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@imageUrl", dog.ImageUrl);
                     }
 
-                    reader.Close();
+                    int id = (int)cmd.ExecuteScalar();
+
+                    dog.Id = id;
                 }
             }
         }
@@ -155,18 +155,33 @@ namespace doggo.Repositories
                     cmd.CommandText = @"
                             UPDATE Dog
                             SET 
-                                [Name] = @name, 
+                                Name = @name, 
                                 OwnerId = @ownerId, 
                                 Breed = @breed, 
                                 Notes = @notes, 
-                                ImageUrl = @imageurl
+                                ImageUrl = @imageUrl
                             WHERE Id = @id";
                     cmd.Parameters.AddWithValue("@id", dog.Id);
                     cmd.Parameters.AddWithValue("@name", dog.Name);
                     cmd.Parameters.AddWithValue("@ownerId", dog.OwnerId);
                     cmd.Parameters.AddWithValue("@breed", dog.Breed);
-                    cmd.Parameters.AddWithValue("@notes", dog.Notes);
-                    cmd.Parameters.AddWithValue("@imageUrl", dog.ImageUrl);
+                    if (dog.Notes == null)
+                    {
+                        cmd.Parameters.AddWithValue("@notes", DBNull.Value);
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@notes", dog.Notes);
+                    }
+
+                    if (dog.ImageUrl == null)
+                    {
+                        cmd.Parameters.AddWithValue("@imageUrl", DBNull.Value);
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@imageUrl", dog.ImageUrl);
+                    }
 
                     cmd.ExecuteNonQuery();
                 }
