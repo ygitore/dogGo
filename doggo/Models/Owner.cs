@@ -9,7 +9,7 @@ namespace doggo.Models
 {
     public class Owner
     {
-        public int Id;
+        public int Id { get; set; }
 
         [EmailAddress]
         [Required]

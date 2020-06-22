@@ -58,7 +58,7 @@ namespace doggo.Controllers
                 CookieAuthenticationDefaults.AuthenticationScheme,
                 new ClaimsPrincipal(claimsIdentity));
 
-            return RedirectToAction("Index", "Dogs");
+            return RedirectToAction("Index", "Dog");
         }
         public ActionResult Index()
         {
@@ -103,7 +103,7 @@ namespace doggo.Controllers
             try
             {
                 _ownerRepo.AddOwner(owner);
-                return RedirectToAction("Index");
+                return RedirectToAction("Index");               
             }
             catch
             {
@@ -128,15 +128,24 @@ namespace doggo.Controllers
         // POST: OwnersController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, OwnerFormViewModel vm)
+        public ActionResult Edit(int id, Owner owner)
         {
             try
             {
-                _ownerRepo.UpdateOwner(vm.Owner);
-                return RedirectToAction("Index");                
+                _ownerRepo.UpdateOwner(owner);
+
+                return RedirectToAction("Index");
             }
             catch
             {
+                List<Neighborhood> neighborhoods = _neighborhoodRepo.GetAll();
+
+                OwnerFormViewModel vm = new OwnerFormViewModel()
+                {
+                    Owner = owner,
+                    Neighborhoods = neighborhoods
+                };
+
                 return View(vm);
             }
         }
