@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
 
 namespace doggo.Controllers
@@ -43,8 +44,9 @@ namespace doggo.Controllers
             {
                 return Unauthorized();
             }
+            
 
-            var claims = new List<Claim>
+                var claims = new List<Claim>
             {
                 new Claim(ClaimTypes.NameIdentifier, owner.Id.ToString()),
                 new Claim(ClaimTypes.Email, owner.Email),
@@ -59,6 +61,7 @@ namespace doggo.Controllers
                 new ClaimsPrincipal(claimsIdentity));
 
             return RedirectToAction("Index", "Dog");
+           
         }
         public ActionResult Index()
         {

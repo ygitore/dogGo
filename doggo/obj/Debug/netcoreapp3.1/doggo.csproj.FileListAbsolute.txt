@@ -134,10 +134,10 @@ C:\Users\Owner\workspace\doggo\doggo\obj\Debug\netcoreapp3.1\doggo.csproj.CopyCo
 C:\Users\Owner\workspace\doggo\doggo\obj\Debug\netcoreapp3.1\staticwebassets\doggo.StaticWebAssets.Manifest.cache
 C:\Users\Owner\workspace\doggo\doggo\obj\Debug\netcoreapp3.1\staticwebassets\doggo.StaticWebAssets.xml
 C:\Users\Owner\workspace\doggo\doggo\obj\Debug\netcoreapp3.1\doggo.genruntimeconfig.cache
-C:\Users\Owner\workspace\doggo\doggo\obj\Debug\netcoreapp3.1\Razor\Views\Owners\Create.cshtml.g.cs
 C:\Users\Owner\workspace\doggo\doggo\obj\Debug\netcoreapp3.1\Razor\Views\Owners\Index.cshtml.g.cs
 C:\Users\Owner\workspace\doggo\doggo\obj\Debug\netcoreapp3.1\Razor\Views\Owners\Details.cshtml.g.cs
 C:\Users\Owner\workspace\doggo\doggo\obj\Debug\netcoreapp3.1\Razor\Views\Owners\Edit.cshtml.g.cs
 C:\Users\Owner\workspace\doggo\doggo\obj\Debug\netcoreapp3.1\Razor\Views\Owners\Delete.cshtml.g.cs
 C:\Users\Owner\workspace\doggo\doggo\obj\Debug\netcoreapp3.1\Razor\Views\Dog\Edit.cshtml.g.cs
 C:\Users\Owner\workspace\doggo\doggo\obj\Debug\netcoreapp3.1\Razor\Views\Owners\Login.cshtml.g.cs
+C:\Users\Owner\workspace\doggo\doggo\obj\Debug\netcoreapp3.1\Razor\Views\Owners\Create.cshtml.g.cs

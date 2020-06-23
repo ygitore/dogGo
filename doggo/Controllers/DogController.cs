@@ -44,10 +44,9 @@ namespace doggo.Controllers
         }
 
         // GET: DogController/Create
-        public ActionResult Create(int id)
-        {
-            Dog dog = _dogRepository.GetDogById(id);
-            return View(dog);
+        public ActionResult Create()
+        {            
+            return View();
         }
 
         // POST: DogController/Create
@@ -82,9 +81,7 @@ namespace doggo.Controllers
             else
             {
                 return View(dog);
-
             }
-
         }
 
         // POST: DogController/Edit/5
@@ -94,7 +91,6 @@ namespace doggo.Controllers
         {
             try
             {
-              
                 _dogRepository.UpdateDog(dog);
 
                 return RedirectToAction("Index");
