@@ -9,7 +9,8 @@ namespace doggo.Models
 {
     public class Dog
     {
-        public int Id;
+        public int Id { get; set; }
+
         [Required]
         [StringLength(30, MinimumLength = 5, ErrorMessage = "Name is requried")]
         public string Name { get; set; }
@@ -21,7 +22,7 @@ namespace doggo.Models
         public string Breed { get; set; }
 
         [Required]
-        [StringLength(30, ErrorMessage = "notes requried")]
+        [StringLength(12, ErrorMessage = "notes requried")]
         public string Notes { get; set; }
 
         [Required(ErrorMessage = "Image is required")]
